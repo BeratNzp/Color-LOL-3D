@@ -37,7 +37,12 @@ public class Level : MonoBehaviour
     void CountObjects ()
     {
         firstLevelObjects = firstLevelObjectsParent.childCount;
-        secondLevelObjects = secondLevelObjectsParent.childCount;
+        if(secondLevelObjectsParent != null) {
+            secondLevelObjects = secondLevelObjectsParent.childCount;
+        }
+        else {
+            secondLevelObjects = 0;
+        }
         objectsInScene = firstLevelObjects + secondLevelObjects;
         totalObjects = objectsInScene;
     }
